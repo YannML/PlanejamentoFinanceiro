@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Carteira Digital</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+  <link rel="stylesheet" href="./styles/style.css">
+  <script  src="./scripts/script.js"></script>
+
+</head>
+<body>
+  
+  <div class="conteiner">
+    <nav>
+      <ul>
+        <li><img src="./img/icon/icon.png"/></li>
+        <li><a href="index.html">Lançamentos</a></li>
+        <li><a href="planejamento.html">Planejamento</a></li>
+        <li><a href="desenvolvimento.html">Desenvolvimento</a></li>
+        <li><a href="contribua.html">Contribuição</a></li>
+      </ul>
+    </nav>
+    
+    <div id="sidebar">
+      <div class="userData">
+        <label class="titulo">Olá,</label>
+        <label class="titulo" id="nomeUsuario">Futuro investidor</label>
+        <p>
+          <label>Renda</label>
+          <input class="valor" type="text" id="valorRenda">
+        </p>
+       <p>
+          <label>Gastos</label>
+          <div class="valor" id="valorGastos"></div>
+        </p>
+        
+        <p>
+          <label>Saldo</label>
+          <div class="valor" id="valorSaldo"></div>  
+        </p>
+      </div>
+
+      <div class="userPerfil">
+        <label class="titulo">Perfil do investidor</label>
+              <div class="radios">
+                <p>
+                  <label class="subtitulo">Experiência</label>
+                </p>
+                <p>
+                    <input id="Exp1" type="radio" name="exp" value="1" checked><label for="Exp1" class="Exp1">Nenhuma</label> 
+                    <input id="Exp2" type="radio" name="exp" value="2"><label for="Exp2" class="Exp2">Iniciante</label>
+                    <input id="Exp3" type="radio" name="exp" value="3"> <label for="Exp3" class="Exp3">Avançado</label>
+                </p>
+              </div>
+  
+             <div class="radios">
+                <p>
+                  <label class="subtitulo">Tolerância a riscos</label>
+                </p>
+                <p>
+                    <input id="T1" type="radio" name="Tolerancia" value="4" checked><label for="T1" class="T1">Nenhuma</label>
+                    <input id="T2" type="radio" name="Tolerancia" value="5"><label for="T2" class="T2">Baixa</label>
+                    <input id="T3" type="radio" name="Tolerancia" value="6"><label for="T3" class="T3">Moderada</label>
+                    <input id="T4" type="radio" name="Tolerancia" value="7"><label for="T4" class="T4">Alta</label>
+                </p>
+             </div>
+      </div>
+
+      <div class="save">
+        <div><button type="submit" onclick="salvarRenda()">Salvar alterações</button></div>
+      </div>
+    </div>
+    
+    <div id="content1" class="card">
+      <p>
+        <label>Data:</label>
+        <input class="valor" type="date" id="Date">
+      </p>
+     <p>
+        <label>Lançamento:</label>
+        <input class="valor" type="text" id="Lancamentos" placeholder="Nome do lançamento">
+      </p>
+      <p>
+        <label>Valor:</label>
+        <input class="valor" type="text" id="valor" placeholder="R$ 00,00">  
+      </p>
+      <p style="text-align: center;">
+        <input onclick="mostraSelecao()" id="Despesa" type="radio" name="tipoLancamento" value="1" checked><label for="Despesa" class="despesa">Despesa</label>
+        <input onclick="mostraSelecao()"id="Receita" type="radio" name="tipoLancamento" value="2"><label for="Receita" class="receita">Receita</label>
+      </p>
+      <p>
+        <label>Categoria:</label>
+        <select id="categoriaDespesa">
+          <option value="Casa">Casa</option>
+          <option value="Alimentacao">Alimentação</option>
+          <option value="Transporte">Transporte</option>
+          <option value="Saude">Saúde</option>
+          <option value="Lazer">Lazer</option>
+        </select>
+        <select id="categoriaReceita">
+          <option value="RendaExtra">Renda Extra</option>
+          <option value="Rendimento">Rendimento</option>
+          <option value="Proventos">Proventos</option>
+        </select>
+      </p>
+      <p>
+        <label>Descrição:</label>
+        <input class="valor" type="text" id="Descricao" placeholder="Breve Descrição">  
+      </p>
+      <p style="text-align: center;">
+        <button type="submit" class="salvar" onclick="salvarLancamento()">Adicionar</button>
+        <button type="submit" class="deletar" onclick="removerLancamento()">Remover</button>
+      </p>
+      </div>
+
+    <div id="content2" class="card">
+      <h3>Filtros</h3>
+      <p>
+        <label>Coluna:</label>
+        <select id="coluna" name="coluna">
+          <option value="Data">Data</option>
+          <option value="Lancamentos">Lançamentos</option>
+          <option value="Valor">Valor</option>
+          <option value="Despesa">Despesa</option>
+          <option value="Categoria">Categoria</option>
+        </select>
+      </p>
+      <p>
+        <label>Ordenação:</label>
+        <input id="crescente" type="radio" name="ordenacao" value="1" checked><label for="crescente" class="crescente">Crescente</label>
+        <input id="decrescente" type="radio" name="ordenacao" value="2"><label for="decrescente" class="decrescente">Decrescente</label>
+      </p>
+      <p>
+        <h3>Funcionalidades</h3>
+        <p>
+          <label class="LabelFuncionalidades" onclick="removeAll()">Remover todos os registros</label>
+        </p>
+        <p>
+          <label onclick="cancelLastAction()">Cancelar última ação</label>
+        </p>
+        <p>
+          <label onclick="filtrar()">Filtrar</label>
+        </p>
+      </p>
+     
+    </div>
+    <div id="content3" class="card">3</div>
+    
+    <main>
+      <div id="Table" class="Box">
+        <table id="tabela">
+          <tr>
+            <th>Data</th>
+            <th>Lançamentos</th>
+            <th>Categoria</th>
+            <th>Valor</th>
+            <th>Descrição</th>
+            <th>Despesa</th>
+          </tr>
+        </table>
+      </div>
+    </main>
+    
+    <footer>
+      <ul>
+        <li><p>Todos os direitos reservados | Versão 1.0</p></li>
+        <li><img id="diaNoite" src="./img/icon/dia-e-noite.png" onclick="rotateImg()"/></li>
+        <li><img src="./img/icon/contribua.png"/></li>
+        <li><img src="./img/icon/ajuda.png"/></li>
+      </ul>
+    </footer>
+  
+  </div>
+
+  <script  src="./scripts/table.js"></script>
+</body>
+</html>

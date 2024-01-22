@@ -57,7 +57,7 @@
     grid-gap: 0.7rem;
     grid-template-areas:
     "nav nav nav nav"
-    "sidebar content1 content2 content3"
+    "sidebar content1 content1 content2"
     "sidebar main main main"
     "sidebar footer footer footer";
     font-family: "Open Sans", sans-serif;

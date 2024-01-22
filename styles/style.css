@@ -446,11 +446,4 @@ tbody tr:nth-child(even) {
         "footer";
     }
 }
-@media only screen and (min-width:1920px){
-    #Table{
-        box-sizing: border-box;
-        overflow-y: scroll;
-        max-height: 440px;
-    }
-}
 
